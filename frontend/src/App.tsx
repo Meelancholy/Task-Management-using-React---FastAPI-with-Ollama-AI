@@ -246,17 +246,30 @@ function App() {
           </div>
         )}
 
-        {suggestion && !suggestionLoading && (
-          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      {suggestion && !suggestionLoading && (
+        <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg relative">
+          <button 
+            onClick={() => setSuggestion(null)}
+            className="absolute top-3 right-3 text-blue-400 hover:text-blue-600 transition-colors"
+            title="Close suggestion"
+            aria-label="Close suggestion"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <div className="pr-6"> {/* Add padding to prevent text from overlapping close button */}
             <div className="font-semibold text-blue-800 mb-2">
               <span className="text-blue-600">Suggestion for:</span> "{suggestion.taskTitle}"
             </div>
-            <div className="bg-white p-3 rounded border border-blue-100 whitespace-pre-line">
+            <div className="p-3 whitespace-pre-line">
               <span className="font-medium text-blue-700">How to complete:</span>
               <div className="mt-1 text-gray-800">{suggestion.suggestionText}</div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
         {tasks.length === 0 && !loading && (
           <div className="text-center py-8 text-gray-500">

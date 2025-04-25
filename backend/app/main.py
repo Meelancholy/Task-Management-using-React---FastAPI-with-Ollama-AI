@@ -87,7 +87,7 @@ ollama_client = Client(host=OLLAMA_URL)
 
 @app.post("/suggestions/")
 async def suggest_task_completion(title: str):
-    prompt = f"How can someone complete this task efficiently make your answer short and concise: '{title}'?"
+    prompt = f"Just answer only steps for this task short: '{title}'?"
     try:
         response = ollama_client.chat(
             model='gemma3:4b-it-qat',
