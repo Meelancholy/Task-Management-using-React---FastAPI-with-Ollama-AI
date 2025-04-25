@@ -140,7 +140,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-6">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Task Manager</h1>
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Task Management</h1>
         <div className="flex mb-6">
           <input
             type="text"
